@@ -1,0 +1,11 @@
+// Section: Global error middleware
+function errorHandler(err, req, res, next) {
+  console.error("Unexpected error:", err);
+
+  return res.status(500).json({
+    success: false,
+    message: "Internal Server Error",
+  });
+}
+
+module.exports = errorHandler;
